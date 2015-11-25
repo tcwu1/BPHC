@@ -8,23 +8,30 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
-public class MainPage extends AppCompatActivity {
+
+public class MainPage extends AppCompatActivity
+{
+    private Button home;
+    private Button socialMedia;
+    private Button forum;
+    private Button profile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
+        home = (Button) findViewById(R.id.homePage);
+        socialMedia = (Button) findViewById(R.id.socialMediaPage);
+        forum = (Button) findViewById(R.id.forumPage);
+        profile = (Button) findViewById(R.id.profilePage);
+
+        home.setOnClickListener(this);
+        socialMedia.setOnClickListener(this);
+        forum.setOnClickListener(this);
+        profile.setOnClickListener(this);
         });
     }
 
@@ -49,4 +56,6 @@ public class MainPage extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
